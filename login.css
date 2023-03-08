@@ -1,0 +1,42 @@
+* {
+    background-color: #112D4E;
+ 
+}
+.container{
+    position:absolute;
+    top: 6%;
+    left: 7%;
+    width: 86%;
+    height: 87%;
+    border: 1px solid white;    
+    background-color: #F9F7F7;
+    border-radius: 25px;  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login-panel{
+    height: 60vh;
+    width: 50vh;
+    border-radius: 25px;
+    background-color: #F9F7F7;
+    /* background-color: white; */
+    border: solid 5px #3F72AF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#username,#password { 
+    background: none;
+}
+#SignInText{
+    background: none;
+    font-size: 2em;
+}
+#signInBtn{
+    background: none;
+}
+#signUpText, #signUpLink {
+    background: none;
+}
