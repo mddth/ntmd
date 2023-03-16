@@ -89,6 +89,9 @@
         #toSettingBtn{
             width:auto;
         }
+        #distance{
+            background: none;
+        }
 
     </style>
 </head>
@@ -102,10 +105,41 @@
             <h1>ROBOT</h1>
         </div>
         <div class="border2">
-            <p>HELLO,THIS IS THE LEADER_DTH'S WEB</p>
+            <p>Distance: <span id="distance"> </span></p>
         </div>
         <div class="border3">
 
         </div>
     </div>
 </body>
+
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js";
+    import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-database.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyBu3I-Ae-gE316NyRDNW8i67hGz2iOVNuU",
+      authDomain: "esp32-database-16f7a.firebaseapp.com",
+      databaseURL: "https://esp32-database-16f7a-default-rtdb.asia-southeast1.firebasedatabase.app",
+      projectId: "esp32-database-16f7a",
+      storageBucket: "esp32-database-16f7a.appspot.com",
+      messagingSenderId: "494667217533",
+      appId: "1:494667217533:web:79debd110cec04c2bc8f14"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const database = getDatabase();
+
+    const distanceRef = ref(database, '/ESP32_APP/DISTANCE');
+    onValue(distanceRef, (snapshot) => {
+    const data = snapshot.val();
+    document.getElementById("distance").innerHTML = data;
+    
+
+});
+  </script>
